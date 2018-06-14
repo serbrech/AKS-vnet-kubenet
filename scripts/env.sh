@@ -16,7 +16,7 @@ export AKS_LOCATION=eastus
 # export OMS_LOCATION=${AKS_LOCATION}
 
 
-export AKS_DATE=$(date +%Y%m%d)e
+export AKS_DATE=$(date +%Y%m%d)f
 
 export AKS_RG=aks-${AKS_DATE}
 export AKS_NAME=aks-${AKS_DATE}
@@ -31,8 +31,11 @@ export AKS_SUBNET1_RANGE=10.201.0.0/22
 export AKS_SUBNET2_NAME=AKS-Nodes
 export AKS_SUBNET2_RANGE=10.201.4.0/22
 
-export AKS_SVC_CIDR=10.202.0.0/22 # Must not overlap with AKS_VNET_RANGE
+####
+####  NOTE : For now, changing the CIDR or the DNS IP will make your unable to scale your cluster
+####
+export AKS_SVC_CIDR=10.0.0.0/16 # Must not overlap with AKS_VNET_RANGE
 export AKS_SUBNET=/subscriptions/${AKS_SUB}/resourceGroups/${AKS_VNET_RG}/providers/Microsoft.Network/virtualNetworks/${AKS_VNET_NAME}/subnets/${AKS_SUBNET2_NAME}
 # export AKS_BRIDGE_IP=10.201.0.1/24 
-export AKS_DNS_IP=10.202.2.1 # Must be within SVC_CIDR
+export AKS_DNS_IP=10.0.0.10 # Must be within SVC_CIDR
 

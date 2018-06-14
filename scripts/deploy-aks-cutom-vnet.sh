@@ -44,11 +44,11 @@ az group deployment create -g ${AKS_RG} \
     vnetSubnetID="/subscriptions/${AKS_SUB}/resourceGroups/${AKS_VNET_RG}/providers/Microsoft.Network/virtualNetworks/${AKS_VNET_NAME}/subnets/${AKS_SUBNET2_NAME}" \
     servicePrincipalClientId=${SPN_CLIENT_ID} \
     servicePrincipalClientSecret=${SPN_PW} \
-    serviceCidr=${AKS_SVC_CIDR} \
-    dnsServiceIP=${AKS_DNS_IP} \
     workspaceRegion=${OMS_LOCATION} \
     workspaceName=${OMS_WORKSPACE_NAME} \
-    omsWorkspaceId=${OMS_WORKSPACE_ID} \
+    omsWorkspaceId=${OMS_WORKSPACE_ID}
+    serviceCidr=${AKS_SVC_CIDR} \
+    dnsServiceIP=${AKS_DNS_IP} \
 
 # We need to update the VNET with the Route Table and NSG from AKS
 # First, find the resources we need : AKS RG, Route table, NSG and subnet id.     
