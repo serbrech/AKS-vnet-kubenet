@@ -4,6 +4,8 @@ set -x
 export VM_NIC_NSG=aks-jumpbox-nsg
 export VM_NIC=aks-jumpbox-nic
 export VM_NAME=aks-jumpbox
+export VM_PIP=aks-jumpbox-pip
+export AKS_JUMPBOX=${VM_NAME}-${AKS_DATE}.${AKS_VNET_LOCATION}.cloudapp.azure.com
 
 # create network stuff to enable ssh on public ip
 az network nsg create --name ${VM_NIC_NSG}  -l ${AKS_VNET_LOCATION} -g ${AKS_VNET_RG}
@@ -29,4 +31,4 @@ az vm create \
 --admin-username king \
 --nic ${VM_NIC}
 
-echo "connect with : ssh king@${VM_NAME}-${AKS_DATE}.${AKS_VNET_LOCATION}.cloudapp.azure.com"
+echo "connect with : ssh king@${AKS_JUMPBOX}"
