@@ -32,10 +32,11 @@ export AKS_SUBNET2_NAME=AKS-Nodes
 export AKS_SUBNET2_RANGE=10.201.4.0/22
 
 ####
-####  NOTE : For now, changing the CIDR or the DNS IP will make your unable to scale your cluster
+#### NOTE : changing the CIDR or the DNS IP will make your unable to scale your cluster if you cli is not up to date.
+#### make sure your Azure CLI is at least in version 2.0.37  
 ####
-export AKS_SVC_CIDR=10.0.0.0/16 # Must not overlap with AKS_VNET_RANGE
 export AKS_SUBNET=/subscriptions/${AKS_SUB}/resourceGroups/${AKS_VNET_RG}/providers/Microsoft.Network/virtualNetworks/${AKS_VNET_NAME}/subnets/${AKS_SUBNET2_NAME}
 # export AKS_BRIDGE_IP=10.201.0.1/24 
 export AKS_DNS_IP=10.0.0.10 # Must be within SVC_CIDR
+export AKS_SVC_CIDR=10.0.0.0/16 # Must not overlap with AKS_VNET_RANGE
 
