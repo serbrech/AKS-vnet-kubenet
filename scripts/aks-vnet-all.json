@@ -159,6 +159,13 @@
             "metadata": {
                 "description": "A CIDR notation IP for Docker bridge."
             }
+        },
+        "enableRbac": {
+            "type": "bool",
+            "defaultValue": true,
+            "metadata": {
+                "description": "boolean flag to turn on and off of rbac"
+            }
         }
     },
     "resources": [
@@ -170,7 +177,7 @@
             "name": "[parameters('resourceName')]",
             "properties": {
                 "kubernetesVersion": "[parameters('kubernetesVersion')]",
-                "enableRBAC": false,
+                "enableRBAC": "[parameters('enableRbac')]",
                 "dnsPrefix": "[parameters('dnsPrefix')]",
                 "addonProfiles": {
                     "httpApplicationRouting": {
