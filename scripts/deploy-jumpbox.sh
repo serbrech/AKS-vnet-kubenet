@@ -1,5 +1,8 @@
 #!/bin/bash
 set -x
+
+. ./env.sh
+
 # create nsg for nic
 export VM_NIC_NSG=aks-jumpbox-nsg
 export VM_NIC=aks-jumpbox-nic

@@ -46,9 +46,10 @@ az group deployment create -g ${AKS_RG} \
     servicePrincipalClientSecret=${SPN_PW} \
     workspaceRegion=${OMS_LOCATION} \
     workspaceName=${OMS_WORKSPACE_NAME} \
-    omsWorkspaceId=${OMS_WORKSPACE_ID}
+    omsWorkspaceId=${OMS_WORKSPACE_ID} \
     serviceCidr=${AKS_SVC_CIDR} \
     dnsServiceIP=${AKS_DNS_IP} \
+    enableRbac=true
 
 # We need to update the VNET with the Route Table and NSG from AKS
 # First, find the resources we need : AKS RG, Route table, NSG and subnet id.     

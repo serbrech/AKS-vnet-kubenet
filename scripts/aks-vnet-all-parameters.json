@@ -24,7 +24,7 @@
             "value": null
         },
         "kubernetesVersion": {
-            "value": "1.9.6"
+            "value": "1.11.2"
         },
         "workspaceName": {
             "value": "DefaultWorkspace-<subid>-WEU"
@@ -52,6 +52,9 @@
         },
         "dockerBridgeCidr": {
             "value": "172.17.0.1/16"
+        },
+        "enableRbac":{
+            "value": true
         }
     }
 }
